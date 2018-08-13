@@ -1,0 +1,40 @@
+﻿@model Lab21CoffeeShop.Models.UserModel
+@section Scripts{
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+@{
+    ViewBag.Title = "GC Coffee Registration";
+}
+
+
+<style>
+    .error {
+        color: red;
+    }
+</style>
+
+
+@using (Html.BeginForm("Welcome", "Home", FormMethod.Post))
+{
+    Html.ValidationSummary(true);
+    Html.EnableClientValidation(true);
+    Html.EnableUnobtrusiveJavaScript(true);
+    <div class="row">
+        <form action="/Home/Welcome" method="post">
+            <br />
+            <p id="firstName">First Name: @Html.TextBoxFor(user => user.FirstName, new { @placeholder = "First Name" })</p>
+            @Html.ValidationMessageFor(user => user.FirstName, "", new { @class = "error" })
+            <br />
+            <p>Last Name: @Html.TextBoxFor(user => user.LastName)</p>
+            @Html.ValidationMessageFor(user => user.LastName, "", new { @class = "error" })
+            <br />
+            <p>Email: @Html.TextBoxFor(user => user.Email)</p>
+            @Html.ValidationMessageFor(user => user.Email, "", new { @class = "error" })
+            <br />
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+}
+

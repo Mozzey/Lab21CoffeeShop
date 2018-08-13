@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab21CoffeeShop", "Lab21CoffeeShop\Lab21CoffeeShop.csproj", "{E358ACE8-3F4D-4034-AF45-9203D39499EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab21CoffeeShop.Tests", "Lab21CoffeeShop.Tests\Lab21CoffeeShop.Tests.csproj", "{A17C6795-B32C-443E-AC02-A8BEED6F06F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E358ACE8-3F4D-4034-AF45-9203D39499EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E358ACE8-3F4D-4034-AF45-9203D39499EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E358ACE8-3F4D-4034-AF45-9203D39499EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E358ACE8-3F4D-4034-AF45-9203D39499EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A17C6795-B32C-443E-AC02-A8BEED6F06F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A17C6795-B32C-443E-AC02-A8BEED6F06F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A17C6795-B32C-443E-AC02-A8BEED6F06F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A17C6795-B32C-443E-AC02-A8BEED6F06F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CA8544E6-62A5-4E89-B6BA-7409631F850F}
+	EndGlobalSection
+EndGlobal
