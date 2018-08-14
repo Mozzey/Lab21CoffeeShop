@@ -1,9 +1,5 @@
 ﻿@model Lab21CoffeeShop.Models.UserModel
-@section Scripts{
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
 
-}
 @{
     ViewBag.Title = "GC Coffee Registration";
 }
@@ -16,7 +12,7 @@
 </style>
 
 <div class="container">
-    @using (Html.BeginForm("Welcome", "Home", FormMethod.Post))
+    @using (Html.BeginForm("Welcome", "Home", FormMethod.Post, new { @class = "registerForm" }))
     {
         Html.ValidationSummary(true);
         Html.EnableClientValidation(true);
@@ -51,7 +47,7 @@
         <div class="row">
             <div class="col">
                 <label for="PhoneNumber">Phone Number</label>
-                @Html.TextBoxFor(user => user.PhoneNumber, new { @class = "form-control", @placeholder = "0123456789", @type = "number" })
+                @Html.TextBoxFor(user => user.PhoneNumber, new { @class = "form-control", @placeholder = "Phone Number"})
                 @Html.ValidationMessageFor(user => user.PhoneNumber, "", new { @class = "error" })
             </div>
         </div>
@@ -59,7 +55,15 @@
         <div class="row">
             <div class="col">
                 <label for="Password">Password</label>
-                @Html.PasswordFor(user => user.Password, new { @class = "form-control", @placeholder = "Password"})
+                @Html.PasswordFor(user => user.Password, new { @class = "form-control", @placeholder = "Password" })
+                @Html.ValidationMessageFor(user => user.Password, "", new { @class = "error" })
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label for="ConfirmPassword">Re-enter Password</label>
+                @Html.PasswordFor(user => user.ConfirmPassword, new { @class = "form-control", @placeholder = "Re-Enter Password" })
                 @Html.ValidationMessageFor(user => user.Password, "", new { @class = "error" })
             </div>
         </div>
@@ -71,3 +75,69 @@
         </div>
     }
 </div>
+
+@section scripts
+{
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".registerForm").validate({
+                wrapper: "div",
+                rules: {
+                    'FirstName': {
+                        required: true,
+                        minLength: 3,
+                        maxLength: 15
+                    },
+                    'LastName': {
+                        required: true,
+                        minLength: 3,
+                        maxLength: 15
+                    },
+                    'Email': {
+                        required: true,
+                        email: true
+                    },
+                    'PhoneNumber': {
+                        required: true,
+                        phoneUS: true
+                    },
+                    'Password': {
+                        required: true
+                    },
+                    'ConfirmPasswor': {
+                        required: true
+                    }
+                },
+                messages: {
+                    'FirstName': {
+                        required: 'First name is required',
+                        minLength: 'Name can\'t be less than 3 letters',
+                        maxLength: 'Name can\'t be more than 15 letters'
+                    },
+                    'LastName': {
+                        required: 'Last name is required',
+                        minLength: 'Name can\'t be less than 3 letters',
+                        maxLength: 'Name can\'t be more than 15 letters'
+                    },
+                    'Email': {
+                        required: 'First name is required',
+                        email: 'Please enter a valid email'
+                    },
+                    'PhoneNumber': {
+                        required: 'Phone Number is required',
+                        phoneUS: 'A valid phone number consists of 0123456789'
+                    },
+                    'Password': {
+                        required: 'A password is required'
+                    },
+                    'ConfirmPassword': {
+                        required: 'Re-enter password'
+                    }
+                }
+            })
+        })
+        
+    </script>
+
+}
