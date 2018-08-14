@@ -15,26 +15,59 @@
     }
 </style>
 
-
-@using (Html.BeginForm("Welcome", "Home", FormMethod.Post))
-{
-    Html.ValidationSummary(true);
-    Html.EnableClientValidation(true);
-    Html.EnableUnobtrusiveJavaScript(true);
-    <div class="row">
-        <form action="/Home/Welcome" method="post">
-            <br />
-            <p id="firstName">First Name: @Html.TextBoxFor(user => user.FirstName, new { @placeholder = "First Name" })</p>
-            @Html.ValidationMessageFor(user => user.FirstName, "", new { @class = "error" })
-            <br />
-            <p>Last Name: @Html.TextBoxFor(user => user.LastName)</p>
-            @Html.ValidationMessageFor(user => user.LastName, "", new { @class = "error" })
-            <br />
-            <p>Email: @Html.TextBoxFor(user => user.Email)</p>
-            @Html.ValidationMessageFor(user => user.Email, "", new { @class = "error" })
-            <br />
-            <input type="submit" value="Submit" />
-        </form>
-    </div>
-}
-
+<div class="container">
+    @using (Html.BeginForm("Welcome", "Home", FormMethod.Post))
+    {
+        Html.ValidationSummary(true);
+        Html.EnableClientValidation(true);
+        Html.EnableUnobtrusiveJavaScript(true);
+        <br />
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="FirstName">First Name</label>
+                    @Html.TextBoxFor(user => user.FirstName, new { @class = "form-control", @placeholder = "First Name" })
+                    @Html.ValidationMessageFor(user => user.FirstName, "", new { @class = "error" })
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label for="LastName">Last Name</label>
+                @Html.TextBoxFor(user => user.LastName, new { @class = "form-control", @placeholder = "Last Name" })
+                @Html.ValidationMessageFor(user => user.LastName, "", new { @class = "error" })
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label for="Email">Email</label>
+                @Html.TextBoxFor(user => user.Email, new { @class = "form-control", @placeholder = "sample@sample.com" })
+                @Html.ValidationMessageFor(user => user.Email, "", new { @class = "error" })
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label for="PhoneNumber">Phone Number</label>
+                @Html.TextBoxFor(user => user.PhoneNumber, new { @class = "form-control", @placeholder = "0123456789", @type = "number" })
+                @Html.ValidationMessageFor(user => user.PhoneNumber, "", new { @class = "error" })
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label for="Password">Password</label>
+                @Html.PasswordFor(user => user.Password, new { @class = "form-control", @placeholder = "Password"})
+                @Html.ValidationMessageFor(user => user.Password, "", new { @class = "error" })
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary" type="submit" value="Register">Register</button>
+            </div>
+        </div>
+    }
+</div>

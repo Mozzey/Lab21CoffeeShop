@@ -18,7 +18,12 @@ namespace Lab21CoffeeShop.Models
         [Required(ErrorMessage = "Please a valid email address")]
         [EmailAddress]
         public string Email { get; set; }
-
+        [Required(ErrorMessage = "Please a valid phone number")]
+        [Phone]
+        public int PhoneNumber { get; set; }
+        [Required(ErrorMessage = "Please a password")]
+        public string Password { get; set; }
+        public string ConfirmPassword { get; set; }
         public string FullName => $"{FirstName} {LastName}";
     }
 }
