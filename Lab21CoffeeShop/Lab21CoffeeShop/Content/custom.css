@@ -1,12 +1,7 @@
-﻿h1 {
-    margin: 0;
-}
-
-.header {
+﻿.header {
     height: 100vh;
     background-image: url("CupofCoffee.jpg");
     background-size: cover;
-    /*background-position: center;*/
 }
 
 .title {
