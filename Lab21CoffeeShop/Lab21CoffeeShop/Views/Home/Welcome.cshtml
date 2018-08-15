@@ -3,7 +3,8 @@
 @{ 
     ViewBag.Title = "GC Coffee Welcome";
 }
+<div id="fullName">
+    <h1 class="moveInTop">Welcome @ViewBag.Message</h1>
 
-<h1>Welcome @ViewBag.Message!</h1>
-
-<h3>@Html.ActionLink("Register", "Registration", "Home")</h3>
+    <h3>@Html.ActionLink("Register", "Registration", "Home", new { @class = "btn btn-lg btn-default registerButton moveInBottom" })</h3>
+</div>

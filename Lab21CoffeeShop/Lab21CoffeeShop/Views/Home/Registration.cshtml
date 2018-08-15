@@ -5,139 +5,153 @@
 }
 
 
-<style>
-    .error {
-        color: red;
-    }
-</style>
+
+@{
+    List<SelectListItem> genderList = new List<SelectListItem>()
+{
+new SelectListItem { Text = "Black", Value = "Black" },
+new SelectListItem { Text = "Regular", Value = "Regular" },
+new SelectListItem { Text = "Light/Sweet", Value = "Gross" },
+};
+}
 
 <div class="container">
     @using (Html.BeginForm("Welcome", "Home", FormMethod.Post, new { @class = "registerForm" }))
     {
         Html.ValidationSummary(true);
-        Html.EnableClientValidation(true);
-        Html.EnableUnobtrusiveJavaScript(true);
         <br />
         <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label for="FirstName">First Name</label>
-                    @Html.TextBoxFor(user => user.FirstName, new { @class = "form-control", @placeholder = "First Name" })
-                    @Html.ValidationMessageFor(user => user.FirstName, "", new { @class = "error" })
-                </div>
+            <div class="col-md-6">
+                @Html.LabelFor(model => Model.FirstName, new { @class = "moveInRight" })
+                @Html.TextBoxFor(model => Model.FirstName, new { @class = "form-control moveInLeft", @placeholder = "First Name" })
+                @Html.ValidationMessageFor(model => Model.FirstName, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div class="col-md-6">
+                @Html.LabelFor(model => Model.Gender, new { @class = "moveInRight" })
+                @Html.DropDownList("GenderKey", genderList, new { @class = "moveInRight" })
+                @Html.ValidationMessageFor(model => Model.Gender, "", new { @class = "text-danger" })
             </div>
         </div>
         <br />
         <div class="row">
-            <div class="col">
-                <label for="LastName">Last Name</label>
-                @Html.TextBoxFor(user => user.LastName, new { @class = "form-control", @placeholder = "Last Name" })
-                @Html.ValidationMessageFor(user => user.LastName, "", new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(user => user.LastName, new { @class = "moveInRight" })
+                @Html.TextBoxFor(user => user.LastName, new { @class = "form-control moveInLeft", @placeholder = "Last Name" })
+                @Html.ValidationMessageFor(user => user.LastName, "", new { @class = "text-danger" })
             </div>
         </div>
         <br />
         <div class="row">
-            <div class="col">
-                <label for="Email">Email</label>
-                @Html.TextBoxFor(user => user.Email, new { @class = "form-control", @placeholder = "sample@sample.com" })
-                @Html.ValidationMessageFor(user => user.Email, "", new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(user => user.Email, new { @class = "moveInRight" })
+                @Html.TextBoxFor(user => user.Email, new { @class = "form-control moveInLeft", @placeholder = "sample@sample.com" })
+                @Html.ValidationMessageFor(user => user.Email, "", new { @class = "text-danger" })
             </div>
         </div>
         <br />
         <div class="row">
-            <div class="col">
-                <label for="PhoneNumber">Phone Number</label>
-                @Html.TextBoxFor(user => user.PhoneNumber, new { @class = "form-control", @placeholder = "Phone Number"})
-                @Html.ValidationMessageFor(user => user.PhoneNumber, "", new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(user => user.PhoneNumber, new { @class = "moveInRight" })
+                @Html.TextBoxFor(user => user.PhoneNumber, new { @class = "form-control moveInLeft", @placeholder = "Phone Number" })
+                @Html.ValidationMessageFor(user => user.PhoneNumber, "", new { @class = "text-danger" })
             </div>
         </div>
         <br />
         <div class="row">
-            <div class="col">
-                <label for="Password">Password</label>
-                @Html.PasswordFor(user => user.Password, new { @class = "form-control", @placeholder = "Password" })
-                @Html.ValidationMessageFor(user => user.Password, "", new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(user => user.Password, new { @class = "moveInRight" })
+                @Html.PasswordFor(user => user.Password, new { @class = "form-control moveInLeft", @id = "password", @placeholder = "Password" })
+                @Html.ValidationMessageFor(user => user.Password, "", new { @class = "text-danger" })
             </div>
         </div>
         <br />
         <div class="row">
-            <div class="col">
-                <label for="ConfirmPassword">Re-enter Password</label>
-                @Html.PasswordFor(user => user.ConfirmPassword, new { @class = "form-control", @placeholder = "Re-Enter Password" })
-                @Html.ValidationMessageFor(user => user.Password, "", new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(user => user.ConfirmPassword, new { @class = "moveInRight" })
+                @Html.PasswordFor(user => user.ConfirmPassword, new { @class = "form-control moveInLeft", @placeholder = "Re-Enter Password" })
+                @Html.ValidationMessageFor(user => user.Password, "", new { @class = "text-danger" })
             </div>
         </div>
         <br />
         <div class="row">
-            <div class="col">
-                <button class="btn btn-primary" type="submit" value="Register">Register</button>
+            <div class="col-md-6">
+                <button class="btn btn-danger moveInBottom" type="submit" value="Register">Submit</button>
             </div>
         </div>
     }
 </div>
+@*/*///////////////////////////////////////////////////////////
+    /////////////////// jQuery Validaton///////////////////////
+    //////////////////////////////////////////////////////////*/*@
+@*@section scripts
+    {
 
-@section scripts
-{
-    
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".registerForm").validate({
-                wrapper: "div",
-                rules: {
-                    'FirstName': {
-                        required: true,
-                        minLength: 3,
-                        maxLength: 15
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".registerForm").validate({
+                    wrapper: "div",
+                    rules: {
+                        FirstName: {
+                            required: true,
+                            minLength: 3,
+                            maxLength: 15
+                        },
+                        LastName: {
+                            required: true,
+                            minLength: 3,
+                            maxLength: 15
+                        },
+                        Email: {
+                            required: true,
+                            email: true
+                        },
+                        PhoneNumber: {
+                            required: true,
+                            phoneUS: true
+                        },
+                        Password: {
+                            required: true,
+                            minLength: 6
+                        },
+                        ConfirmPassword: {
+                            required: true,
+                            minLength: 6,
+                            equalTo: "#password"
+                        }
                     },
-                    'LastName': {
-                        required: true,
-                        minLength: 3,
-                        maxLength: 15
-                    },
-                    'Email': {
-                        required: true,
-                        email: true
-                    },
-                    'PhoneNumber': {
-                        required: true,
-                        phoneUS: true
-                    },
-                    'Password': {
-                        required: true
-                    },
-                    'ConfirmPasswor': {
-                        required: true
+                    messages: {
+                        FirstName: {
+                            required: 'First name is required',
+                            minLength: 'Name can\'t be less than 3 letters',
+                            maxLength: 'Name can\'t be more than 15 letters'
+                        },
+                        LastName: {
+                            required: 'Last name is required',
+                            minLength: 'Name can\'t be less than 3 letters',
+                            maxLength: 'Name can\'t be more than 15 letters'
+                        },
+                        Email: {
+                            required: 'First name is required',
+                            email: 'Please enter a valid email'
+                        },
+                        PhoneNumber: {
+                            required: 'Phone Number is required',
+                            phoneUS: 'A valid phone number consists of 0123456789'
+                        },
+                        Password: {
+                            required: 'A password is required',
+                            minLength: 'Must be more than 6 characters'
+                        },
+                        ConfirmPassword: {
+                            required: 'Re-enter password',
+                            minLength: 'Must be more than 6 characters',
+                            equalTo: 'Passwords must match'
+                        }
                     }
-                },
-                messages: {
-                    'FirstName': {
-                        required: 'First name is required',
-                        minLength: 'Name can\'t be less than 3 letters',
-                        maxLength: 'Name can\'t be more than 15 letters'
-                    },
-                    'LastName': {
-                        required: 'Last name is required',
-                        minLength: 'Name can\'t be less than 3 letters',
-                        maxLength: 'Name can\'t be more than 15 letters'
-                    },
-                    'Email': {
-                        required: 'First name is required',
-                        email: 'Please enter a valid email'
-                    },
-                    'PhoneNumber': {
-                        required: 'Phone Number is required',
-                        phoneUS: 'A valid phone number consists of 0123456789'
-                    },
-                    'Password': {
-                        required: 'A password is required'
-                    },
-                    'ConfirmPassword': {
-                        required: 'Re-enter password'
-                    }
-                }
+                })
             })
-        })
-        
-    </script>
 
-}
+        </script>
+
+    }*@

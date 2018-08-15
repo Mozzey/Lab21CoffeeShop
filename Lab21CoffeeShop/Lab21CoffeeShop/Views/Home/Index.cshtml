@@ -2,8 +2,12 @@
     ViewBag.Title = "GC Coffee Shop";
 }
 
-<div class="jumbotron">
-    <h1>Welcome to GC Coffee Shop!</h1>
-    <br />
-    <h2>@Html.ActionLink("Register", "Registration", "Home")</h2>
+<div class="header">
+    <div class="container">
+        <div class="row title">
+            <h1 class="welcome moveInTop">Welcome to <span id="coffeeShop">GC</span> Coffee Shop<span id="coffeeShop">!</span></h1>
+            <br />
+            @Html.ActionLink("Sign Up", "Registration", "Home", new { @class = "btn btn-lg btn-default registerButton moveInBottom" })
+        </div>
+    </div>
 </div>

@@ -37,7 +37,8 @@ namespace Lab21CoffeeShop.Controllers
         [HttpPost]
         public ActionResult Welcome(UserModel user)
         {
-            ViewBag.Message = user.FullName;
+            var fullname = $"{user.FirstName} {user.LastName}";
+            ViewBag.Message = fullname;
             return View(user);
         }
     }
