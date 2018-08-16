@@ -7,12 +7,12 @@ namespace Lab21CoffeeShop.Models
 {
     public class UserModel
     {
-        [Required(ErrorMessage = "Please enter your first name")]
+        [Required]
         [StringLength(15, MinimumLength = 3)]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "Please enter your first name")]
+        [Required(ErrorMessage = "Please enter your last name")]
         [StringLength(15, MinimumLength = 3)]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
@@ -23,7 +23,7 @@ namespace Lab21CoffeeShop.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Please enter a valid phone number")]
-        [RegularExpression(@"^[0-9]{3}-?[0-9]{3}-?[0-9]{4}$", ErrorMessage = "Please enter a valid phone number")]
+        [Phone]
         [Display(Name = "Phone")]
         public int PhoneNumber { get; set; }
 
@@ -40,9 +40,6 @@ namespace Lab21CoffeeShop.Models
 
         [Required]
         [Display(Name = "Coffee Style")]
-        public string Gender { get; set; }
-        public IEnumerable<SelectListItem> Genders { get; set; }
-
-        public string FullName => $"{FirstName} {LastName}";
+        public string Coffee { get; set; }
     }
 }

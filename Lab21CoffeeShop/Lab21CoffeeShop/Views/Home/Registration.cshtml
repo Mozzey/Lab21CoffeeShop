@@ -2,12 +2,11 @@
 
 @{
     ViewBag.Title = "GC Coffee Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
 @{
-    List<SelectListItem> genderList = new List<SelectListItem>()
+    List<SelectListItem> coffeeList = new List<SelectListItem>()
 {
 new SelectListItem { Text = "Black", Value = "Black" },
 new SelectListItem { Text = "Regular", Value = "Regular" },
@@ -15,11 +14,10 @@ new SelectListItem { Text = "Light/Sweet", Value = "Gross" },
 };
 }
 
-<div class="container">
-    @using (Html.BeginForm("Welcome", "Home", FormMethod.Post, new { @class = "registerForm" }))
+<div class="container-fluid">
+    @using (Html.BeginForm("UserAdded", "Home", FormMethod.Post, new { @class = "registerForm" }))
     {
-        Html.ValidationSummary(true);
-        <br />
+        @Html.ValidationSummary(true)   
         <div class="row">
             <div class="col-md-6">
                 @Html.LabelFor(model => Model.FirstName, new { @class = "moveInRight" })
@@ -27,11 +25,6 @@ new SelectListItem { Text = "Light/Sweet", Value = "Gross" },
                 @Html.ValidationMessageFor(model => Model.FirstName, "", new { @class = "text-danger" })
             </div>
             <br />
-            <div class="col-md-6">
-                @Html.LabelFor(model => Model.Gender, new { @class = "moveInRight" })
-                @Html.DropDownList("GenderKey", genderList, new { @class = "moveInRight" })
-                @Html.ValidationMessageFor(model => Model.Gender, "", new { @class = "text-danger" })
-            </div>
         </div>
         <br />
         <div class="row">
@@ -59,6 +52,13 @@ new SelectListItem { Text = "Light/Sweet", Value = "Gross" },
         </div>
         <br />
         <div class="row">
+            <div class="col-md-6 mb-5">
+                @Html.LabelFor(model => Model.Coffee, new { @class = "moveInRight" })
+                @Html.DropDownList("CoffeeKey", coffeeList, new { @class = "moveInRight" })
+                @Html.ValidationMessageFor(model => Model.Coffee, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-6">
                 @Html.LabelFor(user => user.Password, new { @class = "moveInRight" })
                 @Html.PasswordFor(user => user.Password, new { @class = "form-control moveInLeft", @id = "password", @placeholder = "Password" })
@@ -79,6 +79,7 @@ new SelectListItem { Text = "Light/Sweet", Value = "Gross" },
                 <button class="btn btn-danger moveInBottom" type="submit" value="Register">Submit</button>
             </div>
         </div>
+        <br />
     }
 </div>
 @*/*///////////////////////////////////////////////////////////
