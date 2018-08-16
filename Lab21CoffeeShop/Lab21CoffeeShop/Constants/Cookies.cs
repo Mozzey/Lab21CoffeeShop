@@ -9,7 +9,7 @@ namespace Lab21CoffeeShop.Constants
     {
         public const string FirstNameCookie = "FirstName";
         public const string LastNameCookie = "LastName";
-        public const string FavCoffeeCookie = "FavCoffee";
+        public const string FavCoffeeCookie = "Coffee";
         public const string CoffeeCounter = "CoffeeCounter";
     }
 }

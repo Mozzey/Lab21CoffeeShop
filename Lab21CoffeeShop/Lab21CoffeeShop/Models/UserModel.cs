@@ -7,7 +7,7 @@ namespace Lab21CoffeeShop.Models
 {
     public class UserModel
     {
-        [Required]
+        [Required(ErrorMessage = "Please enter your first name")]
         [StringLength(15, MinimumLength = 3)]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }

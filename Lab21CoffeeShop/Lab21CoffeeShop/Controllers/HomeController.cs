@@ -68,7 +68,7 @@ namespace Lab21CoffeeShop.Controllers
 
             favCoffeeCookie.Value = user.Coffee;
             Response.Cookies.Add(favCoffeeCookie);
-            ViewBag.FavCoffee = favCoffeeCookie.Value;
+            
             return View();  
         }
 
@@ -76,8 +76,8 @@ namespace Lab21CoffeeShop.Controllers
         public ActionResult Products()
         {
             HttpCookie cookie = HttpContext.Request.Cookies[Cookies.FavCoffeeCookie];
-            
-            
+            ViewBag.FavCoffee = cookie.Value;
+
             return View();
         }
     }

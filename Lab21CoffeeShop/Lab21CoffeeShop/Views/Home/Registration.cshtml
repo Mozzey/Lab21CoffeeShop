@@ -54,7 +54,7 @@ new SelectListItem { Text = "Light/Sweet", Value = "Gross" },
         <div class="row">
             <div class="col-md-6 mb-5">
                 @Html.LabelFor(model => Model.Coffee, new { @class = "moveInRight" })
-                @Html.DropDownList("CoffeeKey", coffeeList, new { @class = "moveInRight" })
+                @Html.DropDownList("Coffee", coffeeList, new { @class = "moveInRight" })
                 @Html.ValidationMessageFor(model => Model.Coffee, "", new { @class = "text-danger" })
             </div>
         </div>
