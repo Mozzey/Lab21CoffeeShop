@@ -169,6 +169,8 @@
     <Content Include="Content\CupofCoffee.jpg" />
     <Content Include="Content\custom.css" />
     <Content Include="Content\download.jpg" />
+    <Content Include="Content\light_and_sweet.jpg" />
+    <Content Include="Content\regular.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -242,6 +244,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Home\ShoppingCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

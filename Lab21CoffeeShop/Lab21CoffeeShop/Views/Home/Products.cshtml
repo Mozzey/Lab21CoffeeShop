@@ -3,10 +3,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container-flex">
-    <div class="row" id="FavCoffee">
-        <div class="col-md-6">
-            <h1 class="moveInTop">@ViewBag.FavCoffee</h1>
+<div class="container">
+    <div class="row mt-5" id="FavCoffee">
+        <div class="col-md-3 offset-2">
+            <h1 class="moveInLeft">@ViewBag.FavCoffee</h1>
+            <h3>@Html.ActionLink("Add to Cart", "AddToCart", "Home", new { @class = "btn btn-light registerButton moveInBottom mx-3 my-3" })</h3>
+            <h3>@ViewBag.Counter</h3>
+            <h3>@Html.ActionLink("Checkout", "ShoppingCart", "Home", new { @class = "btn btn-light registerButton moveInBottom mx-3 my-3" })</h3>
         </div>
+        @if (ViewBag.FavCoffee == "Black")
+        {
+            <div class="col-md-6">
+                <img src="~/Content/coffee2.jpg" class="img-thumbnail moveInRight" />
+            </div>
+        }
+        else if (ViewBag.FavCoffee == "Regular")
+        {
+            <div class="col-md-6">
+                <img src="~/Content/regular.jpg" class="img-thumbnail moveInRight" />
+            </div>
+        }
+        else if (ViewBag.FavCoffee == "Light/Sweet")
+        {
+            <div class="col-md-4">
+                <img src="~/Content/light_and_sweet.jpg" class="img-thumbnail moveInRight ml-5" />
+            </div>
+        }
+
     </div>
 </div>

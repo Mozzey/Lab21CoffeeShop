@@ -8,6 +8,7 @@ namespace Lab21CoffeeShop.Controllers
 {
     public class HomeController : Controller
     {
+        // coffee counter
         int Counter = 0;
 
         public ActionResult Index()
@@ -75,10 +76,45 @@ namespace Lab21CoffeeShop.Controllers
         // not using this yet testing it on the route where the name is displayed first
         public ActionResult Products()
         {
-            HttpCookie cookie = HttpContext.Request.Cookies[Cookies.FavCoffeeCookie];
-            ViewBag.FavCoffee = cookie.Value;
+            if (Request.Cookies[Cookies.FavCoffeeCookie] != null)
+            {
+                HttpCookie cookie = HttpContext.Request.Cookies[Cookies.FavCoffeeCookie];
+                ViewBag.FavCoffee = cookie.Value;
+            }
 
+            if (Request.Cookies[Cookies.CoffeeCounter] != null)
+            {
+                HttpCookie coffeCount = HttpContext.Request.Cookies[Cookies.CoffeeCounter];
+                ViewBag.Counter = coffeCount.Value;
+            }
             return View();
+        }
+
+        //public ActionResult ShoppingCart()
+        //{
+
+        //}
+
+        public ActionResult AddToCart()
+        {
+            HttpCookie coffeeCountCookie;
+            if (Request.Cookies[Cookies.CoffeeCounter] == null)
+            {
+                coffeeCountCookie = new HttpCookie(Cookies.CoffeeCounter);
+                coffeeCountCookie.Value = "0";
+                coffeeCountCookie.Expires = DateTime.UtcNow.AddYears(1);
+            }
+            else
+            {
+                coffeeCountCookie = Request.Cookies[Cookies.CoffeeCounter];
+            }
+
+            Counter = int.Parse(coffeeCountCookie.Value);
+            Counter++;
+            coffeeCountCookie.Value = Counter.ToString();
+            Response.Cookies.Add(coffeeCountCookie);
+
+            return RedirectToAction("Products");
         }
     }
 }

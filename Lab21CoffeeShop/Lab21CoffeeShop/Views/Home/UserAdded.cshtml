@@ -6,11 +6,19 @@
 }
 <div class="container">
     <div class="row" id="FirstName">
-        <h1 class="moveInTop">Welcome @ViewBag.Message</h1>
+        <div class="col-md-12">
+            <h1 class="moveInTop">Welcome @ViewBag.Message</h1>
+        </div>
     </div>
-    
-</div>
-    <h2>@Html.ActionLink("Register", "Registration", "Home", new { @class = "btn btn-default registerButton moveInBottom" })</h2>
-    <h2>@Html.ActionLink("Products", "Products", "Home", new { @class = "btn btn-lg btn-default registerButton moveInBottom" })</h2>
+
+    <div class="row">
+        <div class="col-sm-2 d-flex align-items-center justify-content-center">
+            <h2">@Html.ActionLink("Sign Up", "Registration", "Home", new { @class = "btn btn-dark registerButton moveInBottom" })</h2>
+        </div>
+        <div class="col-sm-2">
+            <h2>@Html.ActionLink("Products", "Products", "Home", new { @class = "btn btn-dark registerButton moveInBottom" })</h2>
+        </div>
+    </div>
+</div>    
     
 
