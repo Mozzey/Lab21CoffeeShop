@@ -34,3 +34,5 @@ C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop
 C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop.Tests\obj\Debug\Lab21CoffeeShop.Tests.csproj.CopyComplete
 C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop.Tests\obj\Debug\Lab21CoffeeShop.Tests.dll
 C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop.Tests\obj\Debug\Lab21CoffeeShop.Tests.pdb
+C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop.Tests\bin\Debug\EntityFramework.dll
+C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop.Tests\bin\Debug\EntityFramework.xml

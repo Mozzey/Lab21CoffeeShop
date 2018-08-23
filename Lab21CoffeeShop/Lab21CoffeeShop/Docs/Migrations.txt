@@ -1,0 +1,6 @@
+﻿
+Enable-Migration -ContextTypeName CoffeeShopContext -MigrationsDirectory Migrations/GCCoffeeShop
+
+add-migration -ConfigurationTypeName Lab21CoffeeShop.Migrations.GCCoffeeShop.Configuration "InitialCreate"
+
+update-database -ConfigurationTypeName Lab21CoffeeShop.Migrations.GCCoffeeShop.Configuration

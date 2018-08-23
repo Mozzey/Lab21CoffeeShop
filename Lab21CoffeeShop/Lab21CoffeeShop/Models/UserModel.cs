@@ -7,6 +7,8 @@ namespace Lab21CoffeeShop.Models
 {
     public class UserModel
     {
+        public UserModel() { }
+
         [Required(ErrorMessage = "Please enter your first name")]
         [StringLength(15, MinimumLength = 3)]
         [Display(Name = "First Name")]
@@ -22,8 +24,6 @@ namespace Lab21CoffeeShop.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Please enter a valid phone number")]
-        [Phone]
         [Display(Name = "Phone")]
         public int PhoneNumber { get; set; }
 

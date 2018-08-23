@@ -9,6 +9,8 @@
             <h1 class="welcome moveInTop">Welcome to <span id="coffeeShop">GC</span> Coffee Shop<span id="coffeeShop">!</span></h1>
             <br />
             <h3>@Html.ActionLink("Sign Up", "Registration", "Home", new { @class = "btn btn-light registerButton moveInBottom mx-3" })</h3>
+            <h3>@Html.ActionLink("Create User", "Create", "Users", new { @class = "btn btn-light registerButton moveInBottom mx-3" }, null)</h3>
+            <h3>@Html.ActionLink("Users", "Index", "Users", new { @class = "btn btn-light registerButton moveInBottom mx-3" })</h3>
             <h3>@Html.ActionLink("Products", "Products", "Home", new { @class = "btn btn-light registerButton moveInBottom" })</h3>
         </div>
     </div>

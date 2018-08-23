@@ -90,4 +90,7 @@ C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop
 C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop\obj\Debug\Lab21CoffeeShop.csproj.CopyComplete
 C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop\obj\Debug\Lab21CoffeeShop.dll
 C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop\obj\Debug\Lab21CoffeeShop.pdb
-C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop\obj\Debug\Lab21CoffeeShop.csprojAssemblyReference.cache
+C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop\bin\EntityFramework.dll
+C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop\bin\EntityFramework.SqlServer.dll
+C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop\bin\EntityFramework.xml
+C:\Users\Mozzey\GrandCircus\Labs\Lab21CoffeeShop\Lab21CoffeeShop\Lab21CoffeeShop\bin\EntityFramework.SqlServer.xml
